@@ -1,0 +1,5 @@
+﻿<linker>
+  <assembly fullname="BlazorWebAssemblyApp">
+    <type fullname="*" required="true" />
+  </assembly>
+</linker>
