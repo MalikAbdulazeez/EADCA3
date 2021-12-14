@@ -1,0 +1,82 @@
+﻿@page "/searchanime"
+@inject HttpClient Http
+@inject IJSRuntime JsRuntime
+@using System
+@using System.Text.Json
+@namespace AnimeApi
+
+<h1>Search Anime</h1>
+
+@if (animes == null)
+{
+    <p><em>No Data...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Rating</th>
+                <th>Title</th>
+                <th>Synopsis</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var anime in animes)
+            {
+                <tr>
+                    <td>@anime.attributes.subtype</td>
+                    <td>@anime.attributes.averageRating</td>
+                    <td>@anime.attributes.titles.en</td>
+                    <td>@anime.attributes.synopsis</td>
+                    <td><img src=@anime.attributes.posterImage.tiny alt=@anime.attributes.titles.en style="max-height:280; max-width:180"></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<input type="text" @bind-value="@searchTerm" />
+<input type="button" value="Search" @onclick="@SearchAnime" />
+
+@code {
+
+    private string searchTerm;
+    private IList<Datum> animes;
+    private AnimeApi.GetAnime result;
+    private AnimeRepository ar;
+
+    async Task SearchAnime()
+    {
+
+        ar = new AnimeRepository();
+        try
+        {
+            result = await ar.GetAnime(searchTerm);
+
+        }
+        catch (Exception ex)
+        {
+
+            if (ex is AnimeApi.CustomException < AnimeApi.InvalidLangauge>|| ex is AnimeApi.CustomException<AnimeApi.NoName>)
+            {
+
+                await JsRuntime.InvokeVoidAsync("alert", ex.Message);
+            }
+
+            else if (ex is JsonException)
+            {
+
+                await JsRuntime.InvokeVoidAsync("alert", "Json error hasn't been fixed for certain animes yet.");
+            }
+        }
+
+
+        animes = result.data;
+
+    }
+
+
+}

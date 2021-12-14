@@ -1,0 +1,56 @@
+﻿@page "/trendinganime"
+@inject HttpClient Http
+@using System
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@namespace AnimeApi
+
+<h1>Trending Anime</h1>
+
+
+@if (animes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Rating</th>
+                <th>Title</th>
+                <th>Synopsis</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var anime in animes)
+            {
+                <tr>
+                    <td>@anime.attributes.subtype</td>
+                    <td>@anime.attributes.averageRating</td>
+                    <td>@anime.attributes.titles.en</td>
+                    <td>@anime.attributes.synopsis</td>
+                    <td><img src=@anime.attributes.posterImage.tiny alt=@anime.attributes.titles.en style="max-height:280; max-width:180"></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    private IList<Datum> animes;
+    private AnimeRepository ar;
+    private AnimeApi.TrendingAnime trending;
+
+    protected override async Task OnInitializedAsync()
+    {   
+        ar = new AnimeRepository();
+        trending = await ar.GetTrending();
+        animes = trending.data;
+
+    }
+
+}
