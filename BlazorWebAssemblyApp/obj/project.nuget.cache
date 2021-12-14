@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F4tjQ5OpQaLECrn1QQVjoJlA5M5aPhdflw8FHUA8t9kuVNTIMpyhe/53I5/ExvY4OpKe703oQ3aVzHsITYvLJw==",
+  "dgSpecHash": "2hynAVXHPhg68bLUT8iwkrs90R75p3PEPRoQ3rCD3UEHo9bwgf+n4oDcGiOv0lekhEQfHxDa3jbjYKhP7BVeGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sonic\\Documents\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj",
+  "projectFilePath": "C:\\Users\\sonic\\Documents\\EADCA3\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sonic\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.2\\microsoft.aspnetcore.authorization.3.1.2.nupkg.sha512",
     "C:\\Users\\sonic\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.2.0-preview3.20168.3\\microsoft.aspnetcore.blazor.httpclient.3.2.0-preview3.20168.3.nupkg.sha512",

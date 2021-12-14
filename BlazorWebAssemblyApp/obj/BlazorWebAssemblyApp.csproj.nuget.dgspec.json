@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sonic\\Documents\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj": {}
+    "C:\\Users\\sonic\\Documents\\EADCA3\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sonic\\Documents\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj": {
+    "C:\\Users\\sonic\\Documents\\EADCA3\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sonic\\Documents\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj",
+        "projectUniqueName": "C:\\Users\\sonic\\Documents\\EADCA3\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj",
         "projectName": "BlazorWebAssemblyApp",
-        "projectPath": "C:\\Users\\sonic\\Documents\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj",
+        "projectPath": "C:\\Users\\sonic\\Documents\\EADCA3\\BlazorWebAssemblyApp\\BlazorWebAssemblyApp.csproj",
         "packagesPath": "C:\\Users\\sonic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sonic\\Documents\\BlazorWebAssemblyApp\\obj\\",
+        "outputPath": "C:\\Users\\sonic\\Documents\\EADCA3\\BlazorWebAssemblyApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sonic\\AppData\\Roaming\\NuGet\\NuGet.Config",
